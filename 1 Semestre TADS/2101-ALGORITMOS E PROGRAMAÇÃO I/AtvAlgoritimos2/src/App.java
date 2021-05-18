@@ -57,13 +57,25 @@ public class App {
         int index = posicao + 1;
         //Inserção do nome na posição correta.
         nameList[posicao] = nameAdd;
-        System.out.println("Você tinha " + count + " posições vazias e o nome " + nameAdd + " foi adicionado na posição " + index);
-        System.out.println("Agora você tem " + (count - 1) + " espaços vazios.");
+        if (count == 1) {
+            System.out.println("Você tinha apenas 1 posição vazia e o nome " + nameAdd + " foi adicionado na posição " + index + ", posição no vetor - " + posicao);
+        } else {
+            System.out.println("Você tinha " + count + " posições vazias e o nome " + nameAdd + " foi adicionado na posição " + index + ", posição no vetor - " + posicao);
+        }
+        if (nameList[nameList.length - 1] != null) {
+            System.out.println("Opa, sem espaços vazios, fique alerta. Para deletar um digite 4 no menu.");
+        } else {
+            System.out.println("Agora você tem " + (count - 1) + " espaços vazios.");
+        }
+        
     }
 
     //Função de show para mostrar o vetor.
     public static void Show() {
 		int c = 1;
+        if (nameList[nameList.length -1] != null) {
+            System.out.println("Sua lista está cheia! Muitos amigos =)");
+        }
         System.out.print("Seu banco de nomes: \n");
 		for (int i = 0; i < nameList.length; i++) {
 			if ( nameList[i] == null ) {
@@ -98,7 +110,8 @@ public class App {
             System.out.println("Esse nome não está na sua lista, digite 1 no menu para adicionar.");
         } else {
             int index = Find(nameSearch) + 1;
-            System.out.println("O nome existe na sua lista - posição " + index);
+            System.out.println("O nome existe na sua lista - posição de index " + index);
+            System.out.println("Ah sim! no vetor, o nome está na posição " + Find(nameSearch));
         }
     }
 
