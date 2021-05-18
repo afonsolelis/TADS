@@ -40,7 +40,7 @@ public class App {
         Scanner leitorAdd = new Scanner(System.in);
 		String nameAdd = leitorAdd.nextLine();
         //Chama a função find para saber se o nome já existe.
-        if ( Find(nameAdd ) > -1) {
+        if ( Find(nameAdd) > -1) {
             System.out.println("Ei! Este nome já existe, tente adicionar outro...");
             return;
         }
@@ -72,7 +72,7 @@ public class App {
 				System.out.println(c + " - " + nameList[i]);
 			}
 			c = c + 1;
-    }
+        }
 	}	
 
     /*Função de achar o nome. Retorna a posição em que achou ou -1 
